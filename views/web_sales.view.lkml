@@ -102,8 +102,8 @@ view: web_sales {
     sql: ${TABLE}.WS_PROMO_SK ;;
   }
 
-  dimension: ws_quantity {
-    type: number
+  measure: ws_quantity {
+    type: average
     sql: ${TABLE}.WS_QUANTITY ;;
   }
 
