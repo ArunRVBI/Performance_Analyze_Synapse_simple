@@ -87,8 +87,8 @@ view: web_sales {
     sql: ${TABLE}.WS_NET_PAID_INC_TAX ;;
   }
 
-  dimension: ws_net_profit {
-    type: number
+  measure: ws_net_profit {
+    type: sum
     sql: ${TABLE}.WS_NET_PROFIT ;;
   }
 
