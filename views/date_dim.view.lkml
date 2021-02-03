@@ -150,7 +150,10 @@ view: date_dim {
     type: string
     sql: ${TABLE}.D_YEAR ;;
   }
-
+  dimension: dMonth_Year {
+    type: string
+    sql: TO_CHAR(DATE_TRUNC('month', date_dim.D_DATE ), 'YYYY-MM');;
+  }
   measure: count {
     type: count
     drill_fields: [d_day_name, d_quarter_name]
