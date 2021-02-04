@@ -153,7 +153,7 @@ view: date_dim {
 
   dimension: dMonth_Year {
     type: string
-    sql: (cast(YEAR(date_dim.D_DATE) as varchar(4)) +'-'+CAST(MONTH(date_dim.D_DATE) AS VARCHAR(2))) AS date_dim_year;;
+    sql: (cast(YEAR(date_dim.D_DATE) as varchar(4)) +'-'+CAST(MONTH(date_dim.D_DATE) AS VARCHAR(2)));;
   }
   measure: count {
     type: count

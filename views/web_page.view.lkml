@@ -27,7 +27,6 @@ view: web_page {
     type: number
     sql: ${TABLE}.WP_CREATION_DATE_SK ;;
   }
-
   dimension: wp_customer_sk {
     type: number
     sql: ${TABLE}.WP_CUSTOMER_SK ;;
@@ -100,7 +99,7 @@ view: web_page {
   }
   dimension: Web_Rec_Start_Month_Year{
     type: string
-    sql: (cast(YEAR(web_page.WP_REC_START_DATE) as varchar(4)) +'-'+CAST(MONTH(web_page.WP_REC_START_DATE) AS VARCHAR(2))) AS date_dim_year;;
+    sql: (cast(YEAR(web_page.WP_REC_START_DATE) as varchar(4)) +'-'+CAST(MONTH(web_page.WP_REC_START_DATE) AS VARCHAR(2)));;
   }
   measure: count {
     type: count
