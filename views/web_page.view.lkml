@@ -99,7 +99,7 @@ view: web_page {
   }
   dimension: Web_Rec_Start_Month_Year{
     type: number
-    sql: (DATEPART(year,[DATE_DIM].[D_DATE]) * 100) + DATEPART(month,[DATE_DIM].[D_DATE]) ;;
+    sql: (DATEPART(year,[WEB_PAGE].[wp_rec_start_DATE]) * 100) + DATEPART(month,[WEB_PAGE].[wp_rec_start_DATE]) ;;
   }
   dimension: F_WebRecStart_Monthyear {
     type: string
