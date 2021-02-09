@@ -98,8 +98,12 @@ view: web_page {
     sql: substring(${TABLE}.WP_REC_START_DATE,1,4) ;;
   }
   dimension: Web_Rec_Start_Month_Year{
+    type: number
+    sql: (DATEPART(year,[DATE_DIM].[D_DATE]) * 100) + DATEPART(month,[DATE_DIM].[D_DATE]) ;;
+  }
+  dimension: F_WebRecStart_Monthyear {
     type: string
-    sql: (cast(YEAR(web_page.WP_REC_START_DATE) as varchar(4)) +'-'+CAST(MONTH(web_page.WP_REC_START_DATE) AS VARCHAR(2)));;
+    sql: ${Web_Rec_Start_Month_Year} ;;
   }
   measure: count {
     type: count

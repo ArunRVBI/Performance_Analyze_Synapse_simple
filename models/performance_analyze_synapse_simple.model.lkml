@@ -25,7 +25,7 @@ explore: store_returns {
     sql_on: ${store_returns.sr_customer_sk} = ${customer.c_customer_sk} ;;
   }
   join:  date_dim{
-    type: left_outer
+    type: inner
     relationship: many_to_one
     sql_on: ${store_returns.sr_returned_date_sk} =  ${date_dim.d_date_sk};;
   }
@@ -50,7 +50,7 @@ explore: store_sales {
     sql_on: ${store_sales.ss_customer_sk} = ${customer.c_customer_sk} ;;
   }
   join:  date_dim{
-    type: left_outer
+    type: inner
     relationship: many_to_one
     sql_on: ${store_sales.ss_sold_date_sk} =  ${date_dim.d_date_sk};;
   }

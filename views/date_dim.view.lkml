@@ -152,8 +152,12 @@ view: date_dim {
   }
 
   dimension: dMonth_Year {
+    type: number
+    sql: (DATEPART(year,[DATE_DIM].[D_DATE]) * 100) + DATEPART(month,[DATE_DIM].[D_DATE]);;
+  }
+  dimension: F_MonthYear {
     type: string
-    sql: (cast(YEAR(date_dim.D_DATE) as varchar(4)) +'-'+CAST(MONTH(date_dim.D_DATE) AS VARCHAR(2)));;
+    sql: ${dMonth_Year} ;;
   }
   measure: count {
     type: count
