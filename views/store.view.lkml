@@ -131,6 +131,7 @@ view: store {
   dimension: s_store_name {
     type: string
     sql: ${TABLE}.S_STORE_NAME ;;
+    suggest_persist_for: "2 minutes"
   }
 
   dimension: s_store_sk {
